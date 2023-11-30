@@ -308,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09874469, y: -0, z: -0, w: 0.99511284}
-  m_LocalPosition: {x: 0, y: 1.4000015, z: -4.899994}
+  m_LocalPosition: {x: 0, y: 0.84, z: -5.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -527,11 +527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f87b4ac4fc2604abbb87276420334e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 0
-  prefabs: []
-  detailTextures: []
-  spawnPrefabs: 1
-  terrain: {fileID: 1386185241}
 --- !u!1 &1715347823
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +669,18 @@ PrefabInstance:
     - target: {fileID: 337176994761185362, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
       propertyPath: movementSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 337176994761185362, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
+      propertyPath: controlRollFactor
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 337176994761185362, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
+      propertyPath: positionYawFactor
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 337176994761185362, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
+      propertyPath: controlPitchFactor
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 971722661050841603, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
       propertyPath: m_Name
