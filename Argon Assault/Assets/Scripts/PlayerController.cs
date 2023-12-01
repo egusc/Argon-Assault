@@ -1,21 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+
+    [Header("Movement Settings")]
+
+    [Tooltip("Speed player moves around the screen (float)")] 
     [SerializeField] float movementSpeed = 5f;
+    
     [SerializeField] float xRange = 3f;
     [SerializeField] float yRange = 2f;
     [SerializeField] float positionPitchFactor = 2f;
     [SerializeField] float controlPitchFactor = 10f;
-
     [SerializeField] float positionRollFactor = 2f;
     [SerializeField] float controlRollFactor = 30f;
 
     [SerializeField] float positionYawFactor = 12f;
     [SerializeField] float controlYawFactor = 20f;
+
+    [Header("Weapon settings")]
+    [SerializeField] GameObject[] lasers;
+
+
+
+
+    const int LEFT_CLICK = 0;
 
 
     float horizontalMovement, verticalMovement;
@@ -25,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     private void ProcessTranslation()
@@ -56,4 +70,30 @@ public class PlayerController : MonoBehaviour
         float yaw = -180f + transform.localPosition.x * positionYawFactor;
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
+
+    private void ProcessFiring()
+    {
+        // if pushing fire button then print shooting
+        //else dont
+
+        if(Input.GetMouseButton(LEFT_CLICK))
+        {
+            SetLasersActive(true);
+
+        }
+        else
+        {
+            SetLasersActive(false);
+        }
+    }
+
+    private void SetLasersActive(bool isActive)
+    {
+        foreach (GameObject laser in lasers)
+        {
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
+        }
+    }
+
 }
