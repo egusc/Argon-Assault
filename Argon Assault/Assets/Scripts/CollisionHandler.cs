@@ -6,19 +6,23 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     PlayerController playerController;
+    
+    [Tooltip("Time between player colliding with world and reloading the level")]
+    [SerializeField] float crashTime = 1f;
 
     private void Start() {
         playerController = this.GetComponent<PlayerController>();
     }
     
-    private void OnCollisionEnter(Collision other) {
-        playerController.enabled = false;
-        Invoke("ReloadLevel", 1);
-
+    private void OnTriggerEnter(Collider other)
+    {
+        StartLoseSequence();
     }
-    private void OnTriggerEnter(Collider other) {
+
+    private void StartLoseSequence()
+    {
         playerController.enabled = false;
-        Invoke("ReloadLevel", 1);
+        Invoke("ReloadLevel", crashTime);
     }
 
     private void ReloadLevel()
