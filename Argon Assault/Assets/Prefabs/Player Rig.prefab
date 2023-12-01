@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: controlPitchFactor
       value: 20.8
       objectReference: {fileID: 0}
+    - target: {fileID: 550656129941241846, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 971722661050841603, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
       propertyPath: m_Name
       value: Player Ship
@@ -237,6 +241,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4609749458545344642, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858982303777924861, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4922781647663381474, guid: b73b441e39489934dbc0a89c16a839a3, type: 3}
