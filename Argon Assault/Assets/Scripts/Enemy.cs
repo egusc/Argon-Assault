@@ -5,15 +5,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject enemyExplosion;
+    [SerializeField] GameObject deathFX;
     GameObject parent;
     [SerializeField] int scoreValue = 15;
     [SerializeField] int hp = 4;
+
+    AudioSource audio;
 
     ScoreBoard scoreBoard;
     
     private void Start() {
         scoreBoard = FindObjectOfType<ScoreBoard>();
+        audio = GetComponent<AudioSource>();
+    
 
         if(parent == null)
         {
@@ -34,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     private void KillEnemy()
     {
-        GameObject vfx = Instantiate(enemyExplosion, this.transform.position, Quaternion.identity);
+        GameObject vfx = Instantiate(deathFX, this.transform.position, Quaternion.identity);
         vfx.transform.parent = parent.transform;
         Destroy(this.gameObject);
     }

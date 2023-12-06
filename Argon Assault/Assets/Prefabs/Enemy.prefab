@@ -118,6 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20a64a1b41142c4f8612fb4527a8045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyExplosion: {fileID: 7319366195704506460, guid: 8f0c4d697eff80641b43725f2a19c16a, type: 3}
+  deathFX: {fileID: 7319366195704506460, guid: 8f0c4d697eff80641b43725f2a19c16a, type: 3}
   scoreValue: 15
   hp: 4
